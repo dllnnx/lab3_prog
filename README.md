@@ -15,3 +15,8 @@
 **Диаграмма классов:**
 
 ![Diagram](https://github.com/dllnnx/lab3_prog/raw/master/classes_diagram.jpg)
+
+
+| Отчет по работе |
+|-----------------|
+|[Отчет.pdf](https://github.com/dllnnx/lab3_prog/raw/master/Отчет_ЛБ№3_Денисова_Алена.docx)|
