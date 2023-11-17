@@ -17,6 +17,13 @@
 ![Diagram](https://github.com/dllnnx/lab3_prog/raw/master/classes_diagram.jpg)
 
 
-| Отчет по работе |
-|-----------------|
-|[Отчет.pdf](https://github.com/dllnnx/lab3_prog/raw/master/Отчет_ЛБ№3_Денисова_Алена.docx)|
+**Отчет по работе**
+
+<table>
+    <tbody>
+        <tr>
+            <td rowspan=4 align="center"><a href="https://github.com/dllnnx/lab3_prog/raw/master/Отчет_ЛБ№3_Денисова_Алена.pdf"> Отчет.pdf </a></td>
+            <td rowspan=2 align="center"><a href="https://github.com/dllnnx/lab3_prog/raw/master/Отчет_ЛБ№3_Денисова_Алена.docx"> Отчет.docx </a></td>
+        </tr>
+    </tbody>
+</table>
