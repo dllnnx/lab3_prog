@@ -10,3 +10,20 @@
 2. Программа должна содержать как минимум два интерфейса и один абстрактный класс (номенклатура должна быть согласована с преподавателем). <br>
 3. В разработанных классах должны быть переопределены методы equals(), toString() и hashCode(). <br>
 4. Программа должна содержать как минимум один перечисляемый тип (enum). <br>
+
+
+**Диаграмма классов:**
+
+![Diagram](https://github.com/dllnnx/lab3_prog/raw/master/classes_diagram.jpg)
+
+
+**Отчет по работе**
+
+<table>
+    <tbody>
+        <tr>
+            <td rowspan=4 align="center"><a href="https://github.com/dllnnx/lab3_prog/raw/master/Отчет_ЛБ№3_Денисова_Алена.pdf"> Отчет.pdf </a></td>
+            <td rowspan=2 align="center"><a href="https://github.com/dllnnx/lab3_prog/raw/master/Отчет_ЛБ№3_Денисова_Алена.docx"> Отчет.docx </a></td>
+        </tr>
+    </tbody>
+</table>
