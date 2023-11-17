@@ -105,14 +105,14 @@ public abstract class Human implements Reaction {
     }
 
     public boolean isFriend(Human human){
-        int friend_cnt = 0;
+        int friendCnt = 0;
         for (Event e: this.events){
             if (e.getHuman().equals(human)){
-                if (e.getType().getRate().equals("хорошо")) friend_cnt++;
-                else friend_cnt--;
+                if (e.getType().getRate().equals("хорошо")) friendCnt++;
+                else friendCnt--;
             }
         }
-        return (friend_cnt >= 0);
+        return (friendCnt >= 0);
     }
 
 //    public void thinkOf(Human human){

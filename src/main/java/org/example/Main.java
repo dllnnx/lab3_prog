@@ -1,13 +1,6 @@
 package org.example;
-
 import org.example.characters.*;
 import org.example.enums.*;
-
-import javax.security.auth.login.Configuration;
-import java.sql.Array;
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 public class Main {
     public static void main(String[] args) {
 
@@ -30,6 +23,5 @@ public class Main {
         malysh.addOpinion(Confidence.DEFINITELY, Rate.GOOD, gunilla, EventType.BEFRIEND);
 
         krister.brag("собакой Еффой", malysh);
-
     }
 }
