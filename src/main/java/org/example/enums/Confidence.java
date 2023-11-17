@@ -4,7 +4,7 @@ public enum Confidence {
     DEFINITELY("уверен, что"),
     PROBABLY("почти уверен, что"),
     DEFINITELYNOT("не уверен, что");
-    private String title;
+    private final String title;
 
     Confidence(String title) {
         this.title = title;

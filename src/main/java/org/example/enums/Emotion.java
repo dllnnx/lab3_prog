@@ -5,7 +5,7 @@ public enum Emotion {
     CALM("спокоен"),
     JEALOUS("завидует");
 
-    private String emotion;
+    private final String emotion;
 
     Emotion(String emotion){
         this.emotion = emotion;

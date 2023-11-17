@@ -7,8 +7,8 @@ public enum EventType {
     CLEANUP("прибраться", "хорошо"),
     BEFRIEND("быть товарищем", "хорошо"),
     EVERYTHING("все в мире", "хорошо");
-    private String title;
-    private String rate;
+    private final String title;
+    private final String rate;
 
     EventType(String title, String rate) {
         this.title = title;

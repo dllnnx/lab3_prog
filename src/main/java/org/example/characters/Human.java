@@ -12,8 +12,8 @@ public abstract class Human implements Reaction {
     protected Position position;
     protected Emotion emotion = Emotion.CALM;
     protected Room location;
-    protected LinkedList<Event> events = new LinkedList<Event>();
-    protected LinkedList<List> opinions = new LinkedList<>();
+    protected List<Event> events = new LinkedList<Event>();
+    protected List<List> opinions = new LinkedList<>();
 
     public Human(String name) {
         this.name = name;
@@ -62,7 +62,7 @@ public abstract class Human implements Reaction {
         System.out.println(this.getName() + " " + emotion.getEmotion() + ".");
     }
 
-    public LinkedList<Event> getEvents() {
+    public List<Event> getEvents() {
         return events;
     }
 
