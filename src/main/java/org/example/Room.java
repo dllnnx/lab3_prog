@@ -45,10 +45,10 @@ public class Room {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || this.getClass() != obj.getClass()) return false;
+        if (this == obj) { return true; }
+        if (obj == null || this.getClass() != obj.getClass()) { return false; }
         Room room = (Room) obj;
-        if (! this.getName().equals(room.getName())) return false;
+        if (! this.getName().equals(room.getName())) { return false; }
         return this.getPeople().equals(room.getPeople());
     }
 

@@ -132,11 +132,11 @@ public abstract class Human implements Reaction {
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
-        if (obj == null || this.getClass() != obj.getClass()) return false;
+        if (obj == null || this.getClass() != obj.getClass()){ return false; }
         Human human = (Human) obj;
-        if (! this.getName().equals((human.getName()))) return false;
-        if (! this.getPosition().equals(human.getPosition())) return false;
-        if (! this.getEmotion().equals(human.getEmotion())) return false;
+        if (! this.getName().equals((human.getName()))) { return false; }
+        if (! this.getPosition().equals(human.getPosition())) { return false; }
+        if (! this.getEmotion().equals(human.getEmotion())) { return false; }
         return this.getEvents().equals(human.getEvents());
     }
 
