@@ -12,3 +12,5 @@
 4. Программа должна содержать как минимум один перечисляемый тип (enum). <br>
 
 
+**Диаграмма классов:**
+![Diagram](https://github.com/dllnnx/lab3_prog/raw/master/classes_diagram.jpg)
