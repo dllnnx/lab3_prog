@@ -13,4 +13,5 @@
 
 
 **Диаграмма классов:**
+
 ![Diagram](https://github.com/dllnnx/lab3_prog/raw/master/classes_diagram.jpg)
