@@ -4,6 +4,9 @@ import org.example.Room;
 import org.example.enums.Position;
 
 public class Malysh extends Human {
+
+    public Malysh(){super();}
+
     public Malysh(String name) {
         super(name);
     }

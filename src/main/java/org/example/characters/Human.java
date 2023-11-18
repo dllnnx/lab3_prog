@@ -3,17 +3,19 @@ package org.example.characters;
 import org.example.*;
 import org.example.enums.*;
 
-import java.util.List;
+import java.util.*;
 
-import java.util.LinkedList;
 
 public abstract class Human implements Reaction {
     protected String name;
-    protected Position position;
+    protected Position position = Position.STAND;
     protected Emotion emotion = Emotion.CALM;
     protected Room location;
-    protected List<Event> events = new LinkedList<Event>();
-    protected List<List> opinions = new LinkedList<>();
+    protected List<Event> events = new LinkedList<>();
+    protected List<Opinion> opinions = new LinkedList<>();
+
+    // конструкторы
+    public Human(){}
 
     public Human(String name) {
         this.name = name;
@@ -22,7 +24,6 @@ public abstract class Human implements Reaction {
     public Human(String name, Position position) {
         this.name = name;
         this.position = position;
-        System.out.println(name + " " + position.getPosition() + ".");
     }
 
     public Human(String name, Position position, Room location) {
@@ -30,25 +31,25 @@ public abstract class Human implements Reaction {
         this.position = position;
         this.location = location;
         location.addPerson(this);
-        System.out.println(name + " " + position.getPosition() + " в: " + location.getName() + ".");
     }
 
     public Human(String name, Room location) {
         this.name = name;
         this.location = location;
-        System.out.println(name + " в: " + location.getName() + ".");
+    }
+
+
+    // getters & setters
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public void setPosition(Position position) {
         this.position = position;
-        System.out.println(this.getName() + " " + position.getPosition() + ".");
     }
     public Position getPosition() {
         return position;
@@ -66,69 +67,39 @@ public abstract class Human implements Reaction {
         return events;
     }
 
-    public void setEvents(LinkedList<Event> events) {
-        this.events = events;
+
+    public List<Opinion> getOpinions() {
+        return opinions;
+    }
+    public Room getLocation() {
+        return location;
+    }
+
+    public void setLocation(Room location) {
+        this.location = location;
     }
 
 
-
+    // methods
     @Override
     public void react(Emotion emotion, Human human) {
         this.emotion = emotion;
         System.out.println(this.getName() + " " + this.getEmotion().getEmotion() + " " + human.getName() + "у.");
     }
 
-    public void say(String phrase){
-        System.out.println(phrase);
-    }
 
-    public void moveTo(Room room){
-        room.addPerson(this);
-    }
 
-    public void changePosition(Position newPos){
-        this.setPosition(newPos);
-    }
-
-    public void addEvent(Event event){
-        events.add(event);
-    }
-
-    public void addEvents(Event... events1){
-        events.addAll(List.of(events1));
-    }
-
-    public void addOpinion(Confidence confidence, Rate rate, Human human, EventType eventType){
-        opinions.add(List.of(confidence, rate, human, eventType));
-        System.out.println(this.getName() + " " + confidence.getTitle() + " " + human.getName() + " " +
-                rate.getTitle() + " в: " + eventType.getTitle() + ".");
-    }
-
-    public boolean isFriend(Human human){
-        int friendCnt = 0;
-        for (Event e: this.events){
-            if (e.getHuman().equals(human)){
-                if (e.getType().getRate().equals("хорошо")) friendCnt++;
-                else friendCnt--;
-            }
+    public void printState(){
+        if (this.location != null) {
+            System.out.println(this.getName() + " " + this.getPosition().getTitle() + " в: " +
+                    this.getLocation() + ".");
+        } else {
+            System.out.println(this.getName() + " " + this.getPosition().getTitle() + ".");
         }
-        return (friendCnt >= 0);
     }
 
-//    public void thinkOf(Human human){
-//        int goodThought = 0;
-//        for (Event e: this.events){
-//            if (e.getHuman().equals(human)){
-//                if (e.getType().getRate().equals("хорошо")) goodThought++;
-//                else goodThought--;
-//            }
-//        }
-//        if (goodThought >= 0) this.react(Emotion.HAPPY, human);
-//        else this.react(Emotion.JEALOUS, human);
-//    }
 
-
-
+    // Object methods
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;

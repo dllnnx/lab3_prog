@@ -6,10 +6,10 @@ public enum Position {
     SIT("сидит"),
     UP("встал"),
     DOWN("сел");
-    private final String pos;
+    private final String title;
     Position(String title) {
-        this.pos = title;
+        this.title = title;
     }
 
-    public String getPosition(){ return pos; }
+    public String getTitle(){ return title; }
 }

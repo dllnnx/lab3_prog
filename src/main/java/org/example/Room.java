@@ -7,8 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Room {
-    private final LinkedList<Human> people = new LinkedList<Human>();
-    private final String name;
+    private LinkedList<Human> people = new LinkedList<Human>();
+    private String name;
 
     public Room(String n){
         name = n;
@@ -19,22 +19,30 @@ public class Room {
         people.addAll(List.of(crowd));
     }
 
+    public Room(){}
+
     public String getName(){
         return name;
     }
 
-    public void addPerson(Human human){
-        if (human.getPosition() == null) System.out.println(human.getName() + " зашел в: " + getName() + ".");
-        for (Human man: people){
-            if (man.isFriend(human)) man.react(Emotion.HAPPY, human);
-            else man.react(Emotion.JEALOUS, human);
-        }
-        people.add(human);
+    public void setName(String name) {
+        this.name = name;
     }
 
     public LinkedList<Human> getPeople() {
         return people;
     }
+
+    public void addPerson(Human human){
+        System.out.println(human.getName() + " зашел в: " + getName() + ".");
+        for (Human man: people){
+            if (Friends.isFriend(man, human)) man.react(Emotion.HAPPY, human);
+            else man.react(Emotion.JEALOUS, human);
+        }
+        people.add(human);
+    }
+
+
 
     @Override
     public int hashCode() {

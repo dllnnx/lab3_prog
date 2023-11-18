@@ -1,7 +1,8 @@
-package org.example;
+package org.example.characters;
 
-import org.example.characters.Human;
 import org.example.enums.EventType;
+
+import java.util.List;
 
 public class Event {
     Human human;
@@ -26,5 +27,9 @@ public class Event {
 
     public void setType(EventType type) {
         this.type = type;
+    }
+
+    public static void addEvents(Human human, Event... events1){
+        human.events.addAll(List.of(events1));
     }
 }
