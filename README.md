@@ -14,7 +14,7 @@
 
 **Диаграмма классов:**
 
-![Diagram](https://github.com/dllnnx/lab3_prog/raw/master/classes_diagram.jpg)
+![Diagram](./classes_diagram.jpg)
 
 
 **Отчет по работе**
