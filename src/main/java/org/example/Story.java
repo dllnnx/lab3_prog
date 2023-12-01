@@ -1,10 +1,11 @@
 package org.example;
 
+import org.example.actions.*;
 import org.example.characters.*;
-import org.example.enums.Confidence;
 import org.example.enums.EventType;
 import org.example.enums.Position;
-import org.example.enums.Rate;
+
+import java.util.LinkedList;
 
 public class Story {
     private final Room roomMalysh = new Room();
@@ -12,9 +13,6 @@ public class Story {
     private final Karlson karlson = new Karlson("Карлсон");
     private final Krister krister = new Krister("Кристер");
     private final Gunilla gunilla = new Gunilla("Гунилла");
-
-    public Story() {}
-
 
     public void prepare(){
         roomMalysh.setName("комната Малыша");
@@ -27,38 +25,20 @@ public class Story {
 
     }
 
+    public void go(){
+        LinkedList<Action> actions = new LinkedList<>();
+        actions.add(new KarlsonComesInTheRoom(malysh, roomMalysh, karlson));
+        actions.add(new MalyshIsConfident(malysh, karlson));
+        actions.add(new KarlsonInGames(malysh, karlson));
+        actions.add(new MalyshThinksAboutFriends(malysh, krister));
+        actions.add(new KristerBrags(malysh, gunilla, krister));
 
-    public void karlsonIn(){
-        // Малыш вскочил на ноги и стоял, не помня себя от восторга: так он был рад, что Карлсон вернулся.
 
-        malysh.printState();
-        roomMalysh.addPerson(karlson);
-        malysh.setPosition(Position.UP);
+//        actions.forEach((action -> {
+//            action.run();
+//            System.out.println(action.getState() + "\n");
+//        }));
+        actions.forEach(Action::run);
     }
 
-    public void malyshConf(){
-        // Малыш не сомневался, что Карлсон во всем "лучший в мире".
-
-        Opinion.addOpinion(malysh, new Opinion(Confidence.DEFINITELY, Rate.BEST, karlson, EventType.EVERYTHING));
-    }
-
-    public void karlsonInGames(){
-        //  И уж наверняка он самый лучший в мире товарищ по играм.
-
-        Opinion.addOpinion(malysh, new Opinion(Confidence.PROBABLY, Rate.BEST, karlson, EventType.PLAY));
-    }
-
-    public void malyshThinkOfFriends(){
-        //  Правда, Кристер, и Гунилла тоже хорошие товарищи, но им далеко до Карлсона, который живет на крыше!
-
-        Opinion.addOpinion(malysh, new Opinion(Confidence.DEFINITELY, Rate.GOOD, krister, EventType.BEFRIEND));
-    }
-
-    public void kristerBrags(){
-        // Кристер только и делает, что хвалится своей собакой Еффой, и Малыш ему давно завидует.
-
-        Opinion.addOpinion(malysh, new Opinion(Confidence.DEFINITELY, Rate.GOOD, gunilla, EventType.BEFRIEND));
-
-        krister.brag("собакой Еффой", malysh);
-    }
 }

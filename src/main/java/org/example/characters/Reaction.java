@@ -1,4 +1,4 @@
-package org.example;
+package org.example.characters;
 
 import org.example.characters.*;
 import org.example.enums.*;

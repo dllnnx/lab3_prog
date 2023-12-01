@@ -5,8 +5,8 @@ import org.example.enums.EventType;
 import java.util.List;
 
 public class Event {
-    Human human;
-    EventType type;
+    private Human human;
+    private EventType type;
 
     public Event(Human human, EventType type) {
         this.human = human;

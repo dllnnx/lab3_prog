@@ -14,7 +14,7 @@ public abstract class Human implements Reaction {
     protected List<Event> events = new LinkedList<>();
     protected List<Opinion> opinions = new LinkedList<>();
 
-    // конструкторы
+
     public Human(){}
 
     public Human(String name) {
