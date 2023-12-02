@@ -1,17 +1,16 @@
 package org.example.actions;
 
 import org.example.Room;
-import org.example.characters.Karlson;
-import org.example.characters.Malysh;
+import org.example.characters.Human;
 import org.example.enums.Position;
 
-public class KarlsonComesInTheRoom implements Action{
-    private final Malysh malysh;
+public class PersonComesInTheRoom implements Action{
+    private final Human malysh;
     private final Room roomMalysh;
-    private final Karlson karlson;
+    private final Human karlson;
 
 
-    public KarlsonComesInTheRoom(Malysh malysh, Room roomMalysh, Karlson karlson){
+    public PersonComesInTheRoom(Human malysh, Room roomMalysh, Human karlson){
         this.karlson = karlson;
         this.malysh = malysh;
         this.roomMalysh = roomMalysh;

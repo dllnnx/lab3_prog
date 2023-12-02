@@ -6,16 +6,13 @@ import org.example.enums.*;
 import java.util.*;
 
 
-public abstract class Human implements Reaction {
+public class Human implements Reaction {
     protected String name;
     protected Position position = Position.STAND;
     protected Emotion emotion = Emotion.CALM;
-    protected Room location;
     protected List<Event> events = new LinkedList<>();
     protected List<Opinion> opinions = new LinkedList<>();
 
-
-    public Human(){}
 
     public Human(String name) {
         this.name = name;
@@ -29,13 +26,12 @@ public abstract class Human implements Reaction {
     public Human(String name, Position position, Room location) {
         this.name = name;
         this.position = position;
-        this.location = location;
         location.addPerson(this);
     }
 
     public Human(String name, Room location) {
         this.name = name;
-        this.location = location;
+        location.addPerson(this);
     }
 
 
@@ -71,13 +67,6 @@ public abstract class Human implements Reaction {
     public List<Opinion> getOpinions() {
         return opinions;
     }
-    public Room getLocation() {
-        return location;
-    }
-
-    public void setLocation(Room location) {
-        this.location = location;
-    }
 
 
     // methods
@@ -90,12 +79,12 @@ public abstract class Human implements Reaction {
 
 
     public void printState(){
-        if (this.location != null) {
-            System.out.println(this.getName() + " " + this.getPosition().getTitle() + " в: " +
-                    this.getLocation() + ".");
-        } else {
-            System.out.println(this.getName() + " " + this.getPosition().getTitle() + ".");
-        }
+        System.out.println(this.getName() + " " + this.getPosition().getTitle() + ".");
+    }
+
+    public void brag(String s, Human human) {
+        System.out.println(this.getName() + " хвастается " + s + ".");
+        human.setEmotion(Emotion.JEALOUS);
     }
 
 
@@ -114,7 +103,7 @@ public abstract class Human implements Reaction {
     @Override
     public int hashCode() {
         int result = name.hashCode();
-        result += position.hashCode() + emotion.hashCode() + location.hashCode() + events.hashCode();
+        result += position.hashCode() + emotion.hashCode() + events.hashCode();
         return result;
     }
 
@@ -122,4 +111,6 @@ public abstract class Human implements Reaction {
     public String toString() {
         return name;
     }
+
+
 }

@@ -25,10 +25,6 @@ public class Event {
         return type;
     }
 
-    public void setType(EventType type) {
-        this.type = type;
-    }
-
     public static void addEvents(Human human, Event... events1){
         human.events.addAll(List.of(events1));
     }

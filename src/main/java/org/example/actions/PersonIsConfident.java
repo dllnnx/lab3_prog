@@ -1,18 +1,14 @@
 package org.example.actions;
 
-import org.example.characters.Karlson;
-import org.example.characters.Malysh;
-import org.example.characters.Opinion;
-import org.example.enums.Confidence;
-import org.example.enums.EventType;
-import org.example.enums.Rate;
+import org.example.characters.*;
+import org.example.enums.*;
 
-public class MalyshIsConfident implements Action{
+public class PersonIsConfident implements Action{
 
-    private final Malysh malysh;
-    private final Karlson karlson;
+    private final Human malysh;
+    private final Human karlson;
 
-    public MalyshIsConfident(Malysh malysh, Karlson karlson) {
+    public PersonIsConfident(Human malysh, Human karlson) {
         this.malysh = malysh;
         this.karlson = karlson;
     }
