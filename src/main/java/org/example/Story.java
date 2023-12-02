@@ -38,6 +38,9 @@ public class Story {
 //            action.run();
 //            System.out.println(action.getState() + "\n");
 //        }));
+//        for (int i = 0; i < 3; i++){
+//            actions.get(i).run();
+//        }
         actions.forEach(Action::run);
     }
 
